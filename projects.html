@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects - Bishowdip Thapa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
-    <nav>
-      <h2 class="logo">Bishowdip Thapa</h2>
-      <ul>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-left">
+        <h2 class="logo">Bishowdip Thapa</h2>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="extras.html">Extras</a></li>
@@ -19,7 +30,7 @@
     </nav>
   </header>
 
-  <section class="content">
+  <main id="main" class="content">
     <h1>Projects</h1>
 
     <div class="card">
@@ -33,10 +44,12 @@
       <p>Python Tkinter, SQLite | Role: Scrum Master</p>
       <a href="https://github.com/bishowdip/Parlour_Management_System" target="_blank" class="btn">View on GitHub</a>
     </div>
-  </section>
+  </main>
 
   <footer>
-    <p>© 2025 Bishowdip Thapa</p>
+    <p>© 2025 Bishowdip Thapa | Made with ❤️</p>
   </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
