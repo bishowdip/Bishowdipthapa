@@ -3,28 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bishowdip Thapa — CS Student at Softwarica / Coventry University. AI/ML Enthusiast, Android Developer, Edge AI Explorer." />
-  <title>Bishowdip Thapa</title>
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="description" content="Bishowdip Thapa — BSc Software Engineering student at Softwarica / Coventry University. Building explainable medical AI, Android apps in Kotlin, and Edge AI on NVIDIA Jetson." />
+  <meta name="keywords" content="Bishowdip Thapa, Softwarica, Coventry University, AI, Machine Learning, Android, Kotlin, SHAP, LIME, NVIDIA Jetson, Kathmandu, Nepal, portfolio" />
+  <meta name="author" content="Bishowdip Thapa" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bishowdip Thapa — Software Engineer & AI Builder" />
+  <meta property="og:description" content="Explainable medical AI, Android development, and Edge AI. CS student at Softwarica / Coventry University." />
+  <meta property="og:image" content="bishowdip.jpg" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bishowdip Thapa — Software Engineer & AI Builder" />
+  <meta name="twitter:description" content="Explainable medical AI · Android · Edge AI. Kathmandu, Nepal." />
+  <meta name="twitter:image" content="bishowdip.jpg" />
+
+  <title>Bishowdip Thapa — Software Engineer & AI Builder</title>
+
+  <!-- Inline SVG favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2358a6ff'/%3E%3Cstop offset='1' stop-color='%23a371f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230d1117'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,Menlo,monospace' font-size='30' font-weight='700' text-anchor='middle' dominant-baseline='middle' fill='url(%23g)'%3EBT%3C/text%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bishowdip Thapa",
+    "jobTitle": "Software Engineering Student",
+    "description": "CS student at Softwarica / Coventry University. Building explainable medical AI, Android apps, and Edge AI.",
+    "image": "bishowdip.jpg",
+    "email": "mailto:bishodip123@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Softwarica College of IT & E-commerce / Coventry University" },
+      { "@type": "CollegeOrUniversity", "name": "Bauman Moscow State Technical University" }
+    ],
+    "sameAs": [
+      "https://github.com/bishowdip",
+      "https://www.linkedin.com/in/bishowdip-thapa-50392833a/"
+    ]
+  }
+  </script>
 </head>
 <body>
 
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip" href="#hero">Skip to content</a>
+
   <!-- Scroll Progress -->
-  <div id="scrollBar"></div>
+  <div id="scrollBar" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+  <!-- Grain overlay for depth -->
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- ── Navbar ── -->
   <nav id="nav">
     <div class="nav-inner">
       <a href="#hero" class="logo" aria-label="Home"><span class="dim">&lt;</span>BT<span class="dim">/&gt;</span></a>
-      <ul class="nav-ul" id="navUl">
-        <li><a href="#about" class="nl">About</a></li>
-        <li><a href="#skills" class="nl">Skills</a></li>
-        <li><a href="#projects" class="nl">Projects</a></li>
-        <li><a href="#education" class="nl">Education</a></li>
-        <li><a href="#contact" class="nl nav-cta">Contact</a></li>
+      <ul class="nav-ul" id="navUl" role="menubar">
+        <li><a href="#about" class="nl" data-section="about">About</a></li>
+        <li><a href="#skills" class="nl" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nl" data-section="projects">Projects</a></li>
+        <li><a href="#education" class="nl" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nl nav-cta" data-section="contact">Contact</a></li>
       </ul>
       <button id="burger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -33,14 +83,14 @@
   </nav>
 
   <!-- ══════════════════ HERO ══════════════════ -->
-  <section id="hero">
-    <canvas id="canvas"></canvas>
+  <section id="hero" aria-label="Introduction">
+    <canvas id="canvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
 
       <!-- Left: Text -->
       <div class="hero-left">
         <div class="avail-badge">
-          <span class="pulse-dot"></span>
+          <span class="pulse-dot" aria-hidden="true"></span>
           Open to opportunities &nbsp;·&nbsp; Kathmandu, Nepal&nbsp;🇳🇵
         </div>
 
@@ -49,8 +99,8 @@
           <span class="name-grad">Bishowdip Thapa</span>
         </h1>
 
-        <p class="role-line">
-          <span class="role-pre">$&nbsp;&nbsp;</span><span id="typeEl"></span><span class="caret">▋</span>
+        <p class="role-line" aria-live="polite">
+          <span class="role-pre">$&nbsp;&nbsp;</span><span id="typeEl">CS Student @ Softwarica / Coventry</span><span class="caret" aria-hidden="true">▋</span>
         </p>
 
         <p class="bio">
@@ -59,11 +109,11 @@
         </p>
 
         <div class="cta-row">
-          <a href="#projects" class="btn solid">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <a href="#projects" class="btn solid magnetic">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             View Projects
           </a>
-          <a href="mailto:bishodip123@gmail.com" class="btn outline">Get In Touch</a>
+          <a href="mailto:bishodip123@gmail.com" class="btn outline magnetic">Get In Touch</a>
         </div>
 
         <div class="socials">
@@ -82,11 +132,11 @@
       <!-- Right: Visual -->
       <div class="hero-right">
         <div class="pic-wrap">
-          <div class="ring r1"></div>
-          <div class="ring r2"></div>
-          <div class="ring r3"></div>
-          <img src="bishowdip.jpg" alt="Bishowdip Thapa" class="pic" />
-          <div class="pic-badge">🎖️ NVIDIA<br>AI Certified</div>
+          <div class="ring r1" aria-hidden="true"></div>
+          <div class="ring r2" aria-hidden="true"></div>
+          <div class="ring r3" aria-hidden="true"></div>
+          <img src="bishowdip.jpg" alt="Portrait of Bishowdip Thapa" class="pic" width="240" height="240" fetchpriority="high" decoding="async" />
+          <div class="pic-badge" aria-label="NVIDIA AI Certified">🎖️ NVIDIA<br>AI Certified</div>
         </div>
         <div class="float-card fc1">
           <span class="fce">🧠</span>
@@ -105,11 +155,13 @@
       </div>
     </div>
 
-    <div class="scroll-hint">
+    <div class="scroll-hint" aria-hidden="true">
       <div class="mouse"><div class="wheel"></div></div>
       <span>scroll</span>
     </div>
   </section>
+
+  <main id="main">
 
   <!-- ══════════════════ ABOUT ══════════════════ -->
   <section id="about" class="sec">
@@ -438,10 +490,17 @@
           Currently open to internships, research collaborations, and interesting projects.<br>
           Whether it's AI, Android, or a cool idea — I'd love to hear from you!
         </p>
-        <a href="mailto:bishodip123@gmail.com" class="btn solid large">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-          bishodip123@gmail.com
-        </a>
+        <div class="contact-cta">
+          <a href="mailto:bishodip123@gmail.com" class="btn solid large magnetic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            bishodip123@gmail.com
+          </a>
+          <button type="button" id="copyEmail" class="btn outline large magnetic" aria-label="Copy email to clipboard" data-email="bishodip123@gmail.com">
+            <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <svg class="check-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="copy-label">Copy</span>
+          </button>
+        </div>
         <div class="contact-links">
           <a href="https://github.com/bishowdip" target="_blank" rel="noopener" class="cl">
             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
@@ -456,17 +515,27 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ── Footer ── -->
   <footer>
     <div class="inner">
       <div class="footer-inner">
         <span class="logo"><span class="dim">&lt;</span>BT<span class="dim">/&gt;</span></span>
         <p class="fq">"Will create something from 0 and 1 — that's sure."&nbsp;🇳🇵</p>
-        <p class="fc-copy">© 2026 Bishowdip Thapa · Kathmandu, Nepal</p>
+        <p class="fc-copy">© <span id="year">2026</span> Bishowdip Thapa · Crafted with care in Kathmandu, Nepal · <a href="#hero" class="footer-link">Back to top ↑</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Back-to-top button -->
+  <button id="toTop" class="to-top" aria-label="Scroll to top" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="18" height="18" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
