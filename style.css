@@ -1133,6 +1133,386 @@ footer {
   .sec-head { margin-bottom: 48px; }
 }
 
+/* ═══════════════════════════════════════════════════════
+   ▓▓▓▓▓  LAYER 2 — EXTRAORDINARY CINEMATIC DETAILS  ▓▓▓▓▓
+   Cursor spotlight · Animated grid · Morphing blobs ·
+   Split-letter entrance · Word-stagger headings ·
+   Marquee · Orbital dots · Glitch hover · Parallax
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Cursor-following spotlight ── */
+.spotlight {
+  --mx: 50%;
+  --my: 50%;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    600px circle at var(--mx) var(--my),
+    rgba(88, 166, 255, 0.09),
+    rgba(163, 113, 247, 0.05) 30%,
+    transparent 55%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+body.cursor-active .spotlight { opacity: 1; }
+
+/* ── Animated dotted grid in hero ── */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(139, 148, 158, 0.15) 1px, transparent 1.2px);
+  background-size: 28px 28px;
+  background-position: 0 0;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 90%);
+  animation: gridDrift 24s linear infinite;
+  opacity: 0.6;
+}
+@keyframes gridDrift {
+  to { background-position: 28px 28px; }
+}
+
+/* ── Morphing gradient blobs (hero) ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.42;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform, border-radius;
+  mix-blend-mode: screen;
+}
+.blob-1 {
+  width: 420px; height: 420px;
+  top: 10%; left: 58%;
+  background: radial-gradient(circle, rgba(88,166,255,0.55), transparent 70%);
+  animation: blobMorph1 18s ease-in-out infinite alternate;
+}
+.blob-2 {
+  width: 360px; height: 360px;
+  top: 55%; left: 8%;
+  background: radial-gradient(circle, rgba(163,113,247,0.5), transparent 70%);
+  animation: blobMorph2 22s ease-in-out infinite alternate;
+}
+.blob-3 {
+  width: 280px; height: 280px;
+  top: 72%; left: 65%;
+  background: radial-gradient(circle, rgba(247,120,186,0.32), transparent 70%);
+  animation: blobMorph3 20s ease-in-out infinite alternate;
+}
+@keyframes blobMorph1 {
+  0%   { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%  { border-radius: 70% 30% 46% 54% / 30% 60% 40% 70%; transform: translate(-40px, 30px) rotate(30deg) scale(1.08); }
+  100% { border-radius: 38% 62% 55% 45% / 55% 40% 60% 45%; transform: translate(30px, -20px) rotate(-15deg) scale(0.95); }
+}
+@keyframes blobMorph2 {
+  0%   { border-radius: 60% 40% 42% 58% / 60% 42% 58% 40%; transform: translate(0, 0) rotate(0deg) scale(1); }
+  50%  { border-radius: 40% 60% 68% 32% / 45% 55% 45% 55%; transform: translate(50px, -40px) rotate(-25deg) scale(1.12); }
+  100% { border-radius: 55% 45% 50% 50% / 40% 65% 35% 60%; transform: translate(-30px, 40px) rotate(20deg) scale(0.92); }
+}
+@keyframes blobMorph3 {
+  0%   { border-radius: 45% 55% 60% 40% / 50% 50% 50% 50%; transform: translate(0, 0) scale(1); }
+  50%  { border-radius: 65% 35% 40% 60% / 35% 65% 35% 65%; transform: translate(-30px, -30px) scale(1.15); }
+  100% { border-radius: 50% 50% 55% 45% / 60% 40% 60% 40%; transform: translate(40px, 20px) scale(0.88); }
+}
+
+/* ── Split-letter hero name ── */
+.name-grad { display: inline-block; }
+.name-grad .chr {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px) rotateX(-60deg);
+  transform-origin: 50% 100%;
+  animation: letterDrop 0.72s cubic-bezier(0.22, 1.2, 0.36, 1) forwards;
+  animation-delay: var(--d, 0s);
+  will-change: transform, opacity;
+  /* Inherit parent's clipped gradient so each letter is painted */
+  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 50%, var(--blue) 100%);
+  background-size: 200%;
+  background-position: inherit;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+          color: transparent;
+}
+.name-grad .chr.sp { width: 0.35em; background: none; }
+@keyframes letterDrop {
+  0%   { opacity: 0; transform: translateY(40px) rotateX(-60deg); filter: blur(4px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); }
+}
+
+/* Glitch hover on name */
+.name-grad[data-text] {
+  position: relative;
+  cursor: default;
+}
+.name-grad[data-text]::before,
+.name-grad[data-text]::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.2s var(--ease);
+}
+.name-grad[data-text]::before {
+  background: linear-gradient(135deg, #ff4d7e, #58a6ff);
+  transform: translate(-2px, 0);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+.name-grad[data-text]::after {
+  background: linear-gradient(135deg, #58a6ff, #3fb950);
+  transform: translate(2px, 0);
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+.name-grad:hover::before,
+.name-grad:hover::after { opacity: 1; animation: glitch 0.55s steps(2, end) infinite; }
+.name-grad:hover::after  { animation-delay: 0.05s; animation-direction: reverse; }
+@keyframes glitch {
+  0%   { transform: translate(-2px, 0); }
+  25%  { transform: translate(2px, -1px); }
+  50%  { transform: translate(-1px, 1px); }
+  75%  { transform: translate(1px, 0); }
+  100% { transform: translate(-2px, 0); }
+}
+
+/* ── Hi, I'm line fade ── */
+.hi-line {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUpTiny 0.6s var(--ease) 0.05s forwards;
+}
+@keyframes fadeUpTiny {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Word-stagger section headings ── */
+.sec-head h2 .word {
+  display: inline-block;
+  margin-right: 0.24em;
+  opacity: 0;
+  transform: translateY(28px) rotate(3deg);
+  filter: blur(6px);
+  transition: opacity 0.7s var(--ease), transform 0.8s var(--ease), filter 0.7s var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms + 120ms);
+}
+.sec-head h2 .word:last-child { margin-right: 0; }
+.sec-head.visible h2 .word {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+  filter: blur(0);
+}
+.sec-head .sec-tag {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.9);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+.sec-head.visible .sec-tag {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Orbital particles around profile ── */
+.orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.orbit .orb {
+  position: absolute;
+  top: -4px; left: 50%;
+  width: 8px; height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 10px var(--blue), 0 0 20px rgba(88, 166, 255, 0.6);
+}
+.orbit-1 {
+  width: 290px; height: 290px;
+  margin: -145px 0 0 -145px;
+  animation: orbitSpin 7s linear infinite;
+}
+.orbit-2 {
+  width: 340px; height: 340px;
+  margin: -170px 0 0 -170px;
+  animation: orbitSpin 11s linear infinite reverse;
+}
+.orbit-2 .orb { background: var(--purple); box-shadow: 0 0 10px var(--purple), 0 0 20px rgba(163, 113, 247, 0.6); width: 6px; height: 6px; }
+.orbit-3 {
+  width: 400px; height: 400px;
+  margin: -200px 0 0 -200px;
+  animation: orbitSpin 16s linear infinite;
+}
+.orbit-3 .orb { background: var(--pink); box-shadow: 0 0 8px var(--pink), 0 0 18px rgba(247, 120, 186, 0.5); width: 5px; height: 5px; }
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+
+/* ── Pic aura (pulsing glow behind photo) ── */
+.pic-aura {
+  position: absolute;
+  inset: -80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(88,166,255,0.3) 0%, rgba(163,113,247,0.12) 35%, transparent 65%);
+  filter: blur(20px);
+  z-index: 0;
+  animation: auraPulse 4s ease-in-out infinite;
+}
+@keyframes auraPulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%      { transform: scale(1.12); opacity: 1; }
+}
+
+/* ── Tech-stack marquee strip ── */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(88,166,255,0.04), rgba(163,113,247,0.04));
+  padding: 18px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+  animation: mqScroll 38s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.mq-item {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  transition: color 0.3s var(--ease);
+}
+.mq-item:hover { color: var(--blue); }
+.mq-dot {
+  color: var(--blue);
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+@keyframes mqScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Section card "shine" effect on hover (project cards, stats) ── */
+.proj-card {
+  --mx: 50%;
+  --my: 50%;
+}
+.proj-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mx) var(--my),
+    rgba(88, 166, 255, 0.1),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+  z-index: 0;
+}
+.proj-card:hover::after { opacity: 1; }
+.proj-card > * { position: relative; z-index: 1; }
+
+/* ── Staggered skill chip entrance ── */
+.sg.visible .chip {
+  animation: chipPop 0.5s cubic-bezier(0.22, 1.2, 0.36, 1) backwards;
+  animation-delay: calc(var(--chip-i, 0) * 45ms);
+}
+@keyframes chipPop {
+  from { opacity: 0; transform: translateY(10px) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Timeline line draw-in on reveal ── */
+.timeline::before {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.2s var(--ease) 0.2s;
+}
+.timeline.drawn::before { transform: scaleY(1); }
+
+/* ── Project card tag cascade on hover ── */
+.proj-card:hover .tags span {
+  animation: tagBounce 0.5s var(--ease) backwards;
+}
+.proj-card:hover .tags span:nth-child(1) { animation-delay: 0ms; }
+.proj-card:hover .tags span:nth-child(2) { animation-delay: 50ms; }
+.proj-card:hover .tags span:nth-child(3) { animation-delay: 100ms; }
+.proj-card:hover .tags span:nth-child(4) { animation-delay: 150ms; }
+.proj-card:hover .tags span:nth-child(5) { animation-delay: 200ms; }
+.proj-card:hover .tags span:nth-child(6) { animation-delay: 250ms; }
+@keyframes tagBounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+/* ── Scroll-linked parallax helper (JS drives transform directly) ── */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ── Page load: subtle overlay flash ── */
+@keyframes pageIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+#nav, .hero-inner { animation: pageIn 0.6s var(--ease) both; }
+#nav { animation-delay: 0.05s; }
+
+/* ── Animated underline on social icons ── */
+.socials .soc::after {
+  content: '';
+  position: absolute;
+  bottom: -6px; left: 50%;
+  width: 6px; height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-50%) scale(0);
+  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease);
+}
+.socials .soc { position: relative; }
+.socials .soc:hover::after { opacity: 1; transform: translateX(-50%) scale(1); }
+
+/* ── Responsive adjustments for new pieces ── */
+@media (max-width: 768px) {
+  .hero-grid { background-size: 22px 22px; }
+  .blob-1 { width: 280px; height: 280px; }
+  .blob-2 { width: 240px; height: 240px; }
+  .blob-3 { display: none; }
+  .orbit-3 { display: none; }
+  .spotlight { display: none; }
+  .marquee { padding: 14px 0; }
+  .mq-item { font-size: 0.85rem; }
+  .marquee-track { gap: 22px; }
+}
+
 /* ══════════════════ REDUCED MOTION ══════════════════ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1142,10 +1522,17 @@ footer {
     scroll-behavior: auto !important;
   }
   .reveal, .reveal-r { opacity: 1; transform: none; }
-  #canvas { display: none; }
+  #canvas, .spotlight, .hero-grid, .blob, .orbit, .pic-aura { display: none !important; }
   .ring, .pulse-dot, .caret, .pic-badge, .name-grad { animation: none !important; }
   .tl-dot.active::after { display: none; }
   .proj-card.featured::before { animation: none; }
+  .name-grad .chr { opacity: 1; transform: none; }
+  .sec-head h2 .word { opacity: 1; transform: none; filter: none; }
+  .sec-head .sec-tag { opacity: 1; transform: none; }
+  .marquee-track { animation: none !important; }
+  .timeline::before { transform: scaleY(1) !important; }
+  .sg.visible .chip { animation: none !important; }
+  .name-grad[data-text]::before, .name-grad[data-text]::after { display: none; }
 }
 
 /* ══════════════════ PRINT ══════════════════ */
