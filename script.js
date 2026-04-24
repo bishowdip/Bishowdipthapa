@@ -500,6 +500,178 @@
     if (y) y.textContent = new Date().getFullYear();
   })();
 
+  /* ═══════════════════════════════════════════
+     ▓▓▓▓▓  LAYER 2 — CINEMATIC BEHAVIOR  ▓▓▓▓▓
+     ═══════════════════════════════════════════ */
+
+  /* ── L2.1 Cursor spotlight (lerped, butter-smooth) ── */
+  (function initSpotlight() {
+    if (prefersReduced || isTouch || isCoarsePointer) return;
+    const sp = document.querySelector('.spotlight');
+    if (!sp) return;
+
+    let tx = window.innerWidth / 2;
+    let ty = window.innerHeight / 2;
+    let cx = tx, cy = ty;
+    let active = false;
+
+    window.addEventListener('mousemove', e => {
+      tx = e.clientX;
+      ty = e.clientY;
+      if (!active) {
+        active = true;
+        document.body.classList.add('cursor-active');
+      }
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      active = false;
+      document.body.classList.remove('cursor-active');
+    });
+
+    function tick() {
+      cx += (tx - cx) * 0.14;
+      cy += (ty - cy) * 0.14;
+      sp.style.setProperty('--mx', cx + 'px');
+      sp.style.setProperty('--my', cy + 'px');
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+
+  /* ── L2.2 Split hero name into letters for stagger drop ── */
+  (function initSplitName() {
+    const el = document.querySelector('[data-split]');
+    if (!el) return;
+    if (prefersReduced) return;
+
+    const text = el.textContent;
+    el.textContent = '';
+    el.setAttribute('aria-label', text);
+    [...text].forEach((ch, i) => {
+      const s = document.createElement('span');
+      if (ch === ' ') {
+        s.className = 'chr sp';
+        s.innerHTML = '&nbsp;';
+      } else {
+        s.className = 'chr';
+        s.textContent = ch;
+      }
+      s.style.setProperty('--d', (0.3 + i * 0.035) + 's');
+      s.setAttribute('aria-hidden', 'true');
+      el.appendChild(s);
+    });
+  })();
+
+  /* ── L2.3 Split section headings into words ── */
+  (function initSplitHeadings() {
+    const heads = document.querySelectorAll('[data-split-head] h2');
+    heads.forEach(h2 => {
+      const words = h2.textContent.trim().split(/\s+/);
+      h2.setAttribute('aria-label', h2.textContent.trim());
+      h2.innerHTML = words
+        .map((w, i) => `<span class="word" style="--i:${i}" aria-hidden="true">${w}</span>`)
+        .join(' ');
+    });
+  })();
+
+  /* ── L2.4 Hero parallax (scroll + subtle mousemove tilt) ── */
+  (function initHeroParallax() {
+    if (prefersReduced) return;
+    const pic = document.querySelector('.pic-wrap[data-parallax]');
+    const hero = document.getElementById('hero');
+    if (!pic || !hero) return;
+
+    let py = 0;        // scroll offset
+    let tx = 0, ty = 0; // target rotation
+    let rx = 0, ry = 0; // current rotation (lerped)
+    const canTilt = !(isTouch || isCoarsePointer);
+
+    // Scroll parallax target
+    const onScroll = rafThrottle(() => {
+      const y = Math.min(window.scrollY, window.innerHeight);
+      py = y * -0.08;
+    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mousemove tilt target (desktop only)
+    if (canTilt) {
+      hero.addEventListener('mousemove', e => {
+        const r = hero.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width - 0.5) * 12;
+        ty = ((e.clientY - r.top) / r.height - 0.5) * 12;
+      });
+      hero.addEventListener('mouseleave', () => { tx = 0; ty = 0; });
+    }
+
+    function tick() {
+      rx += (tx - rx) * 0.08;
+      ry += (ty - ry) * 0.08;
+      pic.style.transform = canTilt
+        ? `translate3d(0, ${py}px, 0) perspective(900px) rotateY(${rx * 0.5}deg) rotateX(${-ry * 0.5}deg)`
+        : `translate3d(0, ${py}px, 0)`;
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+
+  /* ── L2.5 Project card shine (cursor position as CSS vars) ── */
+  (function initCardShine() {
+    if (isTouch || isCoarsePointer) return;
+    document.querySelectorAll('.proj-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+      });
+    });
+  })();
+
+  /* ── L2.6 Skill chips: stagger index + visible class ── */
+  (function initChipStagger() {
+    document.querySelectorAll('.sg').forEach(sg => {
+      sg.querySelectorAll('.chip').forEach((c, i) => c.style.setProperty('--chip-i', i));
+    });
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('.sg').forEach(sg => sg.classList.add('visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.25 });
+    document.querySelectorAll('.sg').forEach(sg => io.observe(sg));
+  })();
+
+  /* ── L2.7 Timeline: draw the rail on reveal ── */
+  (function initTimelineDraw() {
+    const tl = document.querySelector('.timeline');
+    if (!tl) return;
+    if (prefersReduced || !('IntersectionObserver' in window)) { tl.classList.add('drawn'); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) { tl.classList.add('drawn'); io.unobserve(tl); }
+      });
+    }, { threshold: 0.2 });
+    io.observe(tl);
+  })();
+
+  /* ── L2.8 Marquee speed tweak: pause when off-screen to save paints ── */
+  (function initMarqueePause() {
+    const mq = document.querySelector('.marquee');
+    if (!mq || !('IntersectionObserver' in window)) return;
+    const track = mq.querySelector('.marquee-track');
+    if (!track) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        track.style.animationPlayState = en.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0 });
+    io.observe(mq);
+  })();
+
   /* ── 14. Keyboard shortcut: G then H → top, G then P → projects ── */
   (function initShortcuts() {
     let lastKey = null;

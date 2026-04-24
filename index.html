@@ -65,6 +65,9 @@
   <!-- Grain overlay for depth -->
   <div class="grain" aria-hidden="true"></div>
 
+  <!-- Cursor-following spotlight -->
+  <div class="spotlight" aria-hidden="true"></div>
+
   <!-- ── Navbar ── -->
   <nav id="nav">
     <div class="nav-inner">
@@ -84,6 +87,11 @@
 
   <!-- ══════════════════ HERO ══════════════════ -->
   <section id="hero" aria-label="Introduction">
+    <!-- Animated background layers -->
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
     <canvas id="canvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
 
@@ -95,8 +103,8 @@
         </div>
 
         <h1>
-          Hi, I'm<br>
-          <span class="name-grad">Bishowdip Thapa</span>
+          <span class="hi-line">Hi, I'm</span><br>
+          <span class="name-grad" data-text="Bishowdip Thapa" data-split>Bishowdip Thapa</span>
         </h1>
 
         <p class="role-line" aria-live="polite">
@@ -131,10 +139,16 @@
 
       <!-- Right: Visual -->
       <div class="hero-right">
-        <div class="pic-wrap">
+        <div class="pic-wrap" data-parallax>
           <div class="ring r1" aria-hidden="true"></div>
           <div class="ring r2" aria-hidden="true"></div>
           <div class="ring r3" aria-hidden="true"></div>
+          <!-- Orbital particles -->
+          <div class="orbit orbit-1" aria-hidden="true"><span class="orb"></span></div>
+          <div class="orbit orbit-2" aria-hidden="true"><span class="orb"></span></div>
+          <div class="orbit orbit-3" aria-hidden="true"><span class="orb"></span></div>
+          <!-- Aura -->
+          <div class="pic-aura" aria-hidden="true"></div>
           <img src="bishowdip.jpg" alt="Portrait of Bishowdip Thapa" class="pic" width="240" height="240" fetchpriority="high" decoding="async" />
           <div class="pic-badge" aria-label="NVIDIA AI Certified">🎖️ NVIDIA<br>AI Certified</div>
         </div>
@@ -166,7 +180,7 @@
   <!-- ══════════════════ ABOUT ══════════════════ -->
   <section id="about" class="sec">
     <div class="inner">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" data-split-head>
         <span class="sec-tag">01 // about_me</span>
         <h2>Who Am I?</h2>
       </div>
@@ -262,7 +276,7 @@
   <!-- ══════════════════ SKILLS ══════════════════ -->
   <section id="skills" class="sec alt">
     <div class="inner">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" data-split-head>
         <span class="sec-tag">02 // tech_stack</span>
         <h2>Skills &amp; Tools</h2>
       </div>
@@ -356,10 +370,45 @@
     </div>
   </section>
 
+  <!-- ══════════════════ MARQUEE DIVIDER ══════════════════ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="mq-item">✦ Available for opportunities</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Explainable AI</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Android · Kotlin</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Edge AI · Jetson</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">SHAP · LIME</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Kathmandu, Nepal 🇳🇵</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Let's build something</span>
+      <span class="mq-dot">●</span>
+      <!-- duplicate for seamless loop -->
+      <span class="mq-item">✦ Available for opportunities</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Explainable AI</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Android · Kotlin</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Edge AI · Jetson</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">SHAP · LIME</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Kathmandu, Nepal 🇳🇵</span>
+      <span class="mq-dot">●</span>
+      <span class="mq-item">Let's build something</span>
+      <span class="mq-dot">●</span>
+    </div>
+  </div>
+
   <!-- ══════════════════ PROJECTS ══════════════════ -->
   <section id="projects" class="sec">
     <div class="inner">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" data-split-head>
         <span class="sec-tag">03 // featured_work</span>
         <h2>Projects</h2>
       </div>
@@ -436,7 +485,7 @@
   <!-- ══════════════════ EDUCATION ══════════════════ -->
   <section id="education" class="sec alt">
     <div class="inner">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" data-split-head>
         <span class="sec-tag">04 // background</span>
         <h2>Education &amp; Journey</h2>
       </div>
@@ -480,7 +529,7 @@
   <!-- ══════════════════ CONTACT ══════════════════ -->
   <section id="contact" class="sec">
     <div class="inner">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" data-split-head>
         <span class="sec-tag">05 // reach_out</span>
         <h2>Let's Connect</h2>
       </div>
