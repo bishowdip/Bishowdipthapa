@@ -175,12 +175,12 @@
     if (!el) return;
 
     const lines = [
-      'CS Student @ Softwarica / Coventry',
-      'AI / Machine Learning Enthusiast',
-      'Android Developer (Kotlin)',
-      'Explainable AI (SHAP + LIME)',
-      'NVIDIA Jetson AI Developer',
-      'Building from 0 and 1... 🚀',
+      'AI and Machine Learning Student',
+      'Learning ML algorithms from scratch',
+      'Explainable AI with SHAP and LIME',
+      'Training models, reading papers',
+      'Running AI on NVIDIA Jetson',
+      'From 0s and 1s to neural nets 🚀',
     ];
 
     // Respect reduced motion: show a static line, cycle slowly without typing effect
@@ -454,7 +454,7 @@
           btn.querySelector('.copy-label').textContent = 'Copy';
         }, 2000);
       } catch {
-        showToast('Could not copy — press Ctrl+C', false);
+        showToast('Could not copy, please copy it by hand', false);
       }
     });
   })();
