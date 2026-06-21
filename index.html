@@ -3,258 +3,217 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f0e8">
-  <meta name="description" content="Bishowdip Thapa is a software engineering student in Kathmandu building explainable AI, Android apps, and practical software from 0s and 1s.">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-pKUU0D0p7Vx1nixZagU0KsVjMCi2T+kJevF44lT7/mE='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="description" content="Bishowdip Thapa is a BSc (Hons) Computer Science with Artificial Intelligence student in Kathmandu, building explainable AI, computer vision, Android, and practical software projects.">
   <meta name="author" content="Bishowdip Thapa">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Bishowdip Thapa — From 0 + 1">
-  <meta property="og:description" content="Software engineering, explainable AI, and useful experiments from Kathmandu.">
-  <meta property="og:image" content="bishowdip.jpg">
-  <title>Bishowdip Thapa — From 0 + 1</title>
+  <meta property="og:title" content="Bishowdip Thapa — Computer Science & AI">
+  <meta property="og:description" content="Computer Science with Artificial Intelligence student building practical, understandable software.">
+  <meta property="og:image" content="myself.png">
+  <title>Bishowdip Thapa — Computer Science &amp; AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f37ff'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='28' fill='%23dfff00'%3E01%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='27' fill='%236ea8fe'%3EBT%3C/text%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Bishowdip Thapa",
     "url": "https://bishowdipthapa.com.np",
-    "image": "bishowdip.jpg",
-    "jobTitle": "Software Engineering Student",
+    "image": "myself.png",
+    "jobTitle": "Computer Science with Artificial Intelligence Student",
     "address": {"@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "Nepal"},
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "Softwarica College of IT and E-Commerce / Coventry University"},
+      {"@type": "CollegeOrUniversity", "name": "Bauman Moscow State Technical University"}
+    ],
     "sameAs": ["https://github.com/bishowdip", "https://www.linkedin.com/in/bishowdipthapa/"]
   }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to the good stuff</a>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Bishowdip Thapa, home">
-      <span>BT</span><i>01</i>
-    </a>
+    <a class="wordmark" href="#top" aria-label="Bishowdip Thapa, home">Bishowdip<span>.</span></a>
     <nav aria-label="Main navigation">
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">
-        <span>Menu</span><i></i>
-      </button>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu <i></i></button>
       <div class="site-menu" id="site-menu">
-        <a href="#work">Work</a>
-        <a href="#story">Story</a>
-        <a href="#toolbox">Toolbox</a>
-        <a class="nav-contact" href="#contact">Let's talk ↗</a>
+        <a href="#about">About</a>
+        <a href="#work">Projects</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-contact" href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <canvas id="binary-field" aria-hidden="true"></canvas>
-      <div class="hero-kicker">
-        <span class="status-dot"></span>
-        Kathmandu, Nepal · Open to interesting work
-      </div>
-
-      <div class="hero-title" aria-label="I build useful things from zero and one">
-        <span class="line line-one">I build <em>useful</em></span>
-        <span class="line line-two">things from</span>
-        <span class="line line-three"><b>0</b> and <b>1</b><i>.</i></span>
-      </div>
-
-      <div class="hero-bottom">
-        <p class="hero-intro">
-          I’m <strong>Bishowdip</strong>—a software engineering student exploring the space where
-          <span class="scribble">AI becomes understandable</span> and code becomes useful in the real world.
+      <div class="hero-copy">
+        <p class="availability"><span></span> Based in Kathmandu, Nepal</p>
+        <h1>Computer Science student focused on <em>Artificial Intelligence.</em></h1>
+        <p class="hero-lead">
+          Hi, I’m <strong>Bishowdip Thapa</strong>. I’m studying
+          <strong>BSc (Hons) Computer Science with Artificial Intelligence</strong>
+          and building projects across explainable AI, computer vision, Android, and practical software.
         </p>
-        <a class="round-link magnetic" href="#work" aria-label="See selected work">
-          <span>See work</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
-        </a>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View my projects</a>
+          <a class="button secondary" href="mailto:bishodip123@gmail.com">Get in touch</a>
+        </div>
+        <div class="hero-links">
+          <a href="https://github.com/bishowdip" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/bishowdipthapa/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://orcid.org/0009-0003-5452-7668" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+        </div>
       </div>
 
-      <div class="hero-stamp" aria-hidden="true">
-        <span>CURIOUS BY DEFAULT · BUILDING IN PUBLIC · </span>
-        <b>✦</b>
+      <div class="hero-portrait">
+        <div class="portrait-card">
+          <img src="myself.png" alt="Professional portrait of Bishowdip Thapa" width="800" height="800" fetchpriority="high">
+        </div>
+        <div class="portrait-note">
+          <span>Currently exploring</span>
+          <strong>Explainable &amp; human-centred AI</strong>
+        </div>
       </div>
     </section>
 
-    <section class="marquee" aria-label="Areas of interest">
-      <div class="marquee-track">
-        <span>EXPLAINABLE AI</span><i>✦</i><span>ANDROID</span><i>✦</i><span>EDGE COMPUTING</span><i>✦</i><span>USEFUL SOFTWARE</span><i>✦</i>
-        <span>EXPLAINABLE AI</span><i>✦</i><span>ANDROID</span><i>✦</i><span>EDGE COMPUTING</span><i>✦</i><span>USEFUL SOFTWARE</span><i>✦</i>
+    <div class="focus-strip" aria-label="Primary interests">
+      <span>Machine Learning</span><i></i>
+      <span>Explainable AI</span><i></i>
+      <span>Computer Vision</span><i></i>
+      <span>Android Development</span>
+    </div>
+
+    <section class="about section" id="about">
+      <div class="section-label">01 / About</div>
+      <div class="about-content reveal">
+        <h2>I’m learning how intelligent systems work—and how to make them useful.</h2>
+        <div class="about-text">
+          <p>
+            My current degree combines core computer science with artificial intelligence. I’m especially interested
+            in models that can explain their decisions, because useful AI should also be understandable and responsible.
+          </p>
+          <p>
+            Before moving fully into computing, I studied Mechatronics, Robotics and Automation Engineering at
+            Bauman Moscow State Technical University. That background still influences how I approach software:
+            as part of a complete system, not just code on a screen.
+          </p>
+        </div>
+      </div>
+
+      <div class="education-grid reveal">
+        <article>
+          <span>2024 — 2027</span>
+          <h3>BSc (Hons) Computer Science with Artificial Intelligence</h3>
+          <p>Softwarica College of IT and E-Commerce<br>In partnership with Coventry University, UK</p>
+        </article>
+        <article>
+          <span>2019 — 2023 · Four semesters</span>
+          <h3>Mechatronics, Robotics and Automation Engineering</h3>
+          <p>Bauman Moscow State Technical University, Russia</p>
+        </article>
+        <article>
+          <span>Certification</span>
+          <h3>Getting Started with AI on Jetson Nano</h3>
+          <p>NVIDIA Deep Learning Institute</p>
+        </article>
       </div>
     </section>
 
-    <section class="work section-pad" id="work">
-      <div class="section-heading reveal">
-        <p><span>01</span> Selected work</p>
-        <h2>Things I cared<br>enough to <em>make.</em></h2>
+    <section class="work section" id="work">
+      <div class="section-label">02 / Selected projects</div>
+      <div class="section-intro reveal">
+        <h2>Projects that show how I think and build.</h2>
+        <p>A selection of academic, collaborative, and independent work. Each project links directly to its repository.</p>
       </div>
 
-      <div class="project-list">
-        <article class="project project-featured reveal">
-          <a href="https://github.com/bishowdip/medical-ai-prediction-system" target="_blank" rel="noopener" aria-label="Medical AI Prediction System on GitHub">
-            <div class="project-visual visual-medical">
-              <div class="xai-map" aria-hidden="true">
-                <span style="--x:12%;--y:18%;--s:1.2">age</span>
-                <span style="--x:58%;--y:11%;--s:.8">glucose</span>
-                <span style="--x:75%;--y:53%;--s:1.5">BMI</span>
-                <span style="--x:18%;--y:69%;--s:.7">pressure</span>
-                <span style="--x:43%;--y:43%;--s:2">WHY?</span>
-                <div class="pulse-core"></div>
-              </div>
-              <span class="case-number">CASE / 001</span>
-              <span class="project-arrow">↗</span>
-            </div>
-            <div class="project-copy">
-              <div>
-                <p class="eyebrow">AI · HEALTH · EXPLAINABILITY</p>
-                <h3>Medical AI<br>Prediction System</h3>
-              </div>
-              <p>Multi-disease risk prediction that doesn’t stop at an answer. SHAP and LIME help reveal why the model made each call.</p>
-              <ul><li>Python</li><li>XGBoost</li><li>Streamlit</li><li>SHAP + LIME</li></ul>
-            </div>
-          </a>
-        </article>
-
-        <article class="project project-half reveal">
-          <a href="https://github.com/bishowdip/Handwritten-Form-OCR" target="_blank" rel="noopener" aria-label="Handwritten Form OCR on GitHub">
-            <div class="project-visual visual-ocr">
-              <div class="paper-form" aria-hidden="true">
-                <span>नाम / NAME</span><strong>Bishowdip</strong>
-                <span>DATA</span><strong>{ structured: true }</strong>
-              </div>
-              <span class="scan-line"></span>
-              <span class="case-number">CASE / 002</span>
-              <span class="project-arrow">↗</span>
-            </div>
-            <div class="project-copy">
-              <div>
-                <p class="eyebrow">VISION · OCR · PUBLIC SYSTEMS</p>
-                <h3>Handwritten<br>Form OCR</h3>
-              </div>
-              <p>Turns handwritten government and college forms into clean JSON or CSV data.</p>
-              <ul><li>Python</li><li>Computer Vision</li><li>OCR</li></ul>
-            </div>
-          </a>
-        </article>
-
-        <article class="project project-half reveal">
-          <a href="https://github.com/bishowdip/SatarkAI" target="_blank" rel="noopener" aria-label="SatarkAI on GitHub">
-            <div class="project-visual visual-satark">
-              <div class="forensic-eye" aria-hidden="true"><i></i><b>87%</b></div>
-              <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-              <span class="case-number">CASE / 003</span>
-              <span class="project-arrow">↗</span>
-            </div>
-            <div class="project-copy">
-              <div>
-                <p class="eyebrow">AI · MEDIA FORENSICS</p>
-                <h3>SatarkAI</h3>
-              </div>
-              <p>An AI-media forensic triage workstation for inspecting suspicious digital content.</p>
-              <ul><li>Python</li><li>Forensics</li><li>AI</li></ul>
-            </div>
-          </a>
-        </article>
-
-        <article class="project project-wide reveal">
-          <a href="https://github.com/ManjilDadaa/GharBato" target="_blank" rel="noopener" aria-label="GharBato on GitHub">
-            <div class="project-visual visual-ghar">
-              <div class="route" aria-hidden="true">
-                <span class="pin pin-a"></span><i></i><span class="pin pin-b"></span>
-              </div>
-              <div class="collab-note"><strong>5</strong> contributors<br><strong>700+</strong> commits</div>
-              <span class="case-number">CASE / 004</span>
-              <span class="project-arrow">↗</span>
-            </div>
-            <div class="project-copy">
-              <div>
-                <p class="eyebrow">ANDROID · TEAMWORK · KOTLIN</p>
-                <h3>GharBato</h3>
-              </div>
-              <p>A collaborative Android project and a real lesson in shipping software with a team—not just beside one.</p>
-              <ul><li>Kotlin</li><li>Android</li><li>Gradle</li><li>Collaboration</li></ul>
-            </div>
-          </a>
-        </article>
-      </div>
-
-      <a class="text-link reveal" href="https://github.com/bishowdip?tab=repositories" target="_blank" rel="noopener">
-        Explore all 15 repositories <span>↗</span>
-      </a>
-    </section>
-
-    <section class="story section-pad" id="story">
-      <div class="story-grid">
-        <div class="portrait-wrap reveal">
-          <div class="portrait-frame">
-            <img src="bishowdip.jpg" alt="Bishowdip Thapa in Kathmandu" width="309" height="387" loading="lazy">
+      <div class="projects">
+        <article class="project featured reveal">
+          <div class="project-index">01</div>
+          <div class="project-main">
+            <p class="project-type">Machine Learning · Explainability</p>
+            <h3>Medical AI Prediction System</h3>
+            <p>A multi-disease risk prediction system that uses SHAP and LIME to explain the factors behind each model prediction.</p>
+            <ul><li>Python</li><li>XGBoost</li><li>Streamlit</li><li>SHAP</li><li>LIME</li></ul>
           </div>
-          <p class="portrait-caption">FIG. 01 — Human behind the commits</p>
-          <span class="portrait-sticker">still<br>learning!</span>
-        </div>
+          <a class="project-link" href="https://github.com/bishowdip/medical-ai-prediction-system" target="_blank" rel="noopener noreferrer" aria-label="View Medical AI Prediction System on GitHub">View repository ↗</a>
+        </article>
 
-        <div class="story-copy reveal">
-          <p class="section-label"><span>02</span> The plot so far</p>
-          <h2>I like software<br>with a pulse.</h2>
-          <p class="story-lead">My path started with machines before it became mostly code.</p>
-          <p>I explored mechatronics, robotics, and automation at Bauman Moscow State Technical University. That hardware-software intersection still shapes how I build: systems should make sense, have a purpose, and survive contact with reality.</p>
-          <p>Now I study Software Engineering at Softwarica College, affiliated with Coventry University. I’m especially drawn to explainable ML, edge AI, Android, and tools that solve ordinary, human problems.</p>
-          <blockquote>“Learning to make something out from 0 and 1.”</blockquote>
-        </div>
+        <article class="project reveal">
+          <div class="project-index">02</div>
+          <div class="project-main">
+            <p class="project-type">Computer Vision · OCR</p>
+            <h3>Handwritten Form OCR</h3>
+            <p>Converts handwritten government and college forms into structured JSON or CSV data.</p>
+            <ul><li>Python</li><li>Computer Vision</li><li>OCR</li></ul>
+          </div>
+          <a class="project-link" href="https://github.com/bishowdip/Handwritten-Form-OCR" target="_blank" rel="noopener noreferrer" aria-label="View Handwritten Form OCR on GitHub">View repository ↗</a>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-index">03</div>
+          <div class="project-main">
+            <p class="project-type">AI · Media Forensics</p>
+            <h3>SatarkAI</h3>
+            <p>An AI-media forensic triage workstation for inspecting and assessing suspicious digital content.</p>
+            <ul><li>Python</li><li>Artificial Intelligence</li><li>Forensics</li></ul>
+          </div>
+          <a class="project-link" href="https://github.com/bishowdip/SatarkAI" target="_blank" rel="noopener noreferrer" aria-label="View SatarkAI on GitHub">View repository ↗</a>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-index">04</div>
+          <div class="project-main">
+            <p class="project-type">Android · Team Project</p>
+            <h3>GharBato</h3>
+            <p>A collaborative Kotlin Android project developed with a five-person team and more than 700 commits.</p>
+            <ul><li>Kotlin</li><li>Android</li><li>Gradle</li><li>Collaboration</li></ul>
+          </div>
+          <a class="project-link" href="https://github.com/ManjilDadaa/GharBato" target="_blank" rel="noopener noreferrer" aria-label="View GharBato on GitHub">View repository ↗</a>
+        </article>
       </div>
 
-      <div class="timeline reveal">
-        <div><span>2019—23</span><strong>Robotics roots</strong><p>Bauman Moscow State Technical University</p></div>
-        <i></i>
-        <div><span>2024—27</span><strong>Software engineering</strong><p>Softwarica College × Coventry University</p></div>
-        <i></i>
-        <div><span>NOW</span><strong>Building in the open</strong><p>AI, Android, edge experiments</p></div>
+      <a class="all-projects reveal" href="https://github.com/bishowdip?tab=repositories" target="_blank" rel="noopener noreferrer">See all repositories on GitHub ↗</a>
+    </section>
+
+    <section class="skills section" id="skills">
+      <div class="section-label">03 / Skills</div>
+      <div class="skills-layout reveal">
+        <div>
+          <h2>My current technical toolkit.</h2>
+          <p>I’m continuing to deepen these skills through coursework and hands-on projects.</p>
+        </div>
+        <div class="skill-groups">
+          <article><h3>AI &amp; Data</h3><p>Machine Learning, Explainable AI, Computer Vision, Scikit-learn, Pandas, NumPy, SHAP, LIME</p></article>
+          <article><h3>Programming</h3><p>Python, Java, Kotlin, SQL</p></article>
+          <article><h3>Development</h3><p>Android, Streamlit, Tkinter, Swing, MVC Architecture</p></article>
+          <article><h3>Tools</h3><p>Git, GitHub, SQLite, Jupyter, NVIDIA Jetson</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="toolbox section-pad" id="toolbox">
-      <div class="section-heading reveal">
-        <p><span>03</span> Working set</p>
-        <h2>Tools change.<br><em>Curiosity stays.</em></h2>
-      </div>
-      <div class="tool-grid reveal">
-        <div class="tool-cell tool-intro">
-          <p>I’m not interested in collecting logos. These are simply the tools helping me ask better questions right now.</p>
-          <span class="tiny-note">Last updated / 2026</span>
+    <section class="contact section" id="contact">
+      <div class="section-label">04 / Contact</div>
+      <div class="contact-content reveal">
+        <div>
+          <h2>Open to internships, collaborations, and research opportunities.</h2>
+          <p>If you’re working on something in AI, software, or Android development, I’d be glad to hear about it.</p>
         </div>
-        <div class="tool-cell"><span>01</span><h3>Think</h3><p>Explainable AI<br>Machine Learning<br>System Design<br>MVC Architecture</p></div>
-        <div class="tool-cell cobalt"><span>02</span><h3>Build</h3><p>Python<br>Java<br>Kotlin<br>SQL</p></div>
-        <div class="tool-cell lime"><span>03</span><h3>Explore</h3><p>Edge AI<br>Computer Vision<br>Android<br>Human-centered AI</p></div>
-        <div class="tool-cell"><span>04</span><h3>Ship with</h3><p>Git + GitHub<br>Streamlit<br>SQLite<br>NVIDIA Jetson</p></div>
-      </div>
-    </section>
-
-    <section class="contact section-pad" id="contact">
-      <div class="contact-orbit" aria-hidden="true"><span>LET'S MAKE SOMETHING USEFUL · SAY HELLO · </span></div>
-      <p class="section-label reveal"><span>04</span> Your move</p>
-      <h2 class="reveal">Have a problem<br>worth <em>thinking about?</em></h2>
-      <p class="contact-note reveal">I’m open to internships, collaborations, research, and conversations that begin with “what if?”</p>
-      <a class="email-link reveal" href="mailto:bishodip123@gmail.com">
-        <span>bishodip123@gmail.com</span><i>↗</i>
-      </a>
-      <div class="contact-links reveal">
-        <a href="https://github.com/bishowdip" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/bishowdipthapa/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://orcid.org/0009-0003-5452-7668" target="_blank" rel="noopener">ORCID ↗</a>
+        <a class="contact-email" href="mailto:bishodip123@gmail.com">bishodip123@gmail.com <span>↗</span></a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Designed &amp; built by Bishowdip Thapa</p>
-    <p>© <span id="year">2026</span> · Kathmandu <span class="footer-time" aria-label="Current time in Kathmandu"></span></p>
-    <a href="#top">Back to zero ↑</a>
+    <p>© <span id="year">2026</span> Bishowdip Thapa</p>
+    <p>Kathmandu, Nepal <span class="footer-time"></span></p>
+    <a href="#top">Back to top ↑</a>
   </footer>
 
   <script src="script.js" defer></script>
