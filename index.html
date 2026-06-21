@@ -1,602 +1,261 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark" />
-  <meta name="theme-color" content="#0d1117" />
-  <meta name="description" content="Bishowdip Thapa is an AI and Machine Learning student at Softwarica College with Coventry University. He is learning how ML algorithms work, building explainable medical AI and running AI on NVIDIA Jetson hardware." />
-  <meta name="keywords" content="Bishowdip Thapa, AI student, Machine Learning, ML algorithms, deep learning, neural networks, Softwarica, Coventry University, SHAP, LIME, NVIDIA Jetson, Kathmandu, Nepal, portfolio" />
-  <meta name="author" content="Bishowdip Thapa" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Bishowdip Thapa, AI and Machine Learning Student" />
-  <meta property="og:description" content="An AI and Machine Learning student learning the algorithms behind explainable medical AI, studying at Softwarica College with Coventry University." />
-  <meta property="og:image" content="bishowdip.jpg" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bishowdip Thapa, AI and Machine Learning Student" />
-  <meta name="twitter:description" content="An AI and Machine Learning student from Kathmandu, Nepal, learning the algorithms behind explainable AI." />
-  <meta name="twitter:image" content="bishowdip.jpg" />
-
-  <title>Bishowdip Thapa, AI and Machine Learning Student</title>
-
-  <!-- Inline SVG favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2358a6ff'/%3E%3Cstop offset='1' stop-color='%23a371f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230d1117'/%3E%3Ctext x='50%25' y='54%25' font-family='ui-monospace,Menlo,monospace' font-size='30' font-weight='700' text-anchor='middle' dominant-baseline='middle' fill='url(%23g)'%3EBT%3C/text%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Structured data -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e8">
+  <meta name="description" content="Bishowdip Thapa is a software engineering student in Kathmandu building explainable AI, Android apps, and practical software from 0s and 1s.">
+  <meta name="author" content="Bishowdip Thapa">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bishowdip Thapa — From 0 + 1">
+  <meta property="og:description" content="Software engineering, explainable AI, and useful experiments from Kathmandu.">
+  <meta property="og:image" content="bishowdip.jpg">
+  <title>Bishowdip Thapa — From 0 + 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231f37ff'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='monospace' font-size='28' fill='%23dfff00'%3E01%3C/text%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Bishowdip Thapa",
-    "jobTitle": "AI and Machine Learning Student",
-    "description": "An AI and Machine Learning student at Softwarica College with Coventry University, learning how ML algorithms work and building explainable medical AI.",
-    "knowsAbout": ["Machine Learning", "Deep Learning", "Explainable AI", "SHAP", "LIME", "Python", "NVIDIA Jetson Edge AI"],
+    "url": "https://bishowdipthapa.com.np",
     "image": "bishowdip.jpg",
-    "email": "mailto:bishodip123@gmail.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "NP" },
-    "alumniOf": [
-      { "@type": "CollegeOrUniversity", "name": "Softwarica College of IT & E-commerce / Coventry University" },
-      { "@type": "CollegeOrUniversity", "name": "Bauman Moscow State Technical University" }
-    ],
-    "sameAs": [
-      "https://github.com/bishowdip",
-      "https://www.linkedin.com/in/bishowdip-thapa-50392833a/"
-    ]
+    "jobTitle": "Software Engineering Student",
+    "address": {"@type": "PostalAddress", "addressLocality": "Kathmandu", "addressCountry": "Nepal"},
+    "sameAs": ["https://github.com/bishowdip", "https://www.linkedin.com/in/bishowdipthapa/"]
   }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to the good stuff</a>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
 
-  <!-- Skip link for keyboard / screen-reader users -->
-  <a class="skip" href="#hero">Skip to content</a>
-
-  <!-- Scroll Progress -->
-  <div id="scrollBar" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
-
-  <!-- Grain overlay for depth -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Cursor-following spotlight -->
-  <div class="spotlight" aria-hidden="true"></div>
-
-  <!-- ── Navbar ── -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="logo" aria-label="Home"><span class="dim">&lt;</span>BT<span class="dim">/&gt;</span></a>
-      <ul class="nav-ul" id="navUl" role="menubar">
-        <li><a href="#about" class="nl" data-section="about">About</a></li>
-        <li><a href="#skills" class="nl" data-section="skills">Skills</a></li>
-        <li><a href="#projects" class="nl" data-section="projects">Projects</a></li>
-        <li><a href="#education" class="nl" data-section="education">Education</a></li>
-        <li><a href="#contact" class="nl nav-cta" data-section="contact">Contact</a></li>
-      </ul>
-      <button id="burger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Bishowdip Thapa, home">
+      <span>BT</span><i>01</i>
+    </a>
+    <nav aria-label="Main navigation">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">
+        <span>Menu</span><i></i>
       </button>
-    </div>
-  </nav>
-
-  <!-- ══════════════════ HERO ══════════════════ -->
-  <section id="hero" aria-label="Introduction">
-    <!-- Animated background layers -->
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="blob blob-1" aria-hidden="true"></div>
-    <div class="blob blob-2" aria-hidden="true"></div>
-    <div class="blob blob-3" aria-hidden="true"></div>
-    <canvas id="canvas" aria-hidden="true"></canvas>
-    <div class="hero-inner">
-
-      <!-- Left: Text -->
-      <div class="hero-left">
-        <div class="avail-badge">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          Open to opportunities in Kathmandu, Nepal&nbsp;🇳🇵
-        </div>
-
-        <h1>
-          <span class="hi-line">Hi, I'm</span><br>
-          <span class="name-grad" data-text="Bishowdip Thapa" data-split>Bishowdip Thapa</span>
-        </h1>
-
-        <p class="role-line" aria-live="polite">
-          <span class="role-pre">$&nbsp;&nbsp;</span><span id="typeEl">AI and Machine Learning Student</span><span class="caret" aria-hidden="true">▋</span>
-        </p>
-
-        <p class="bio">
-          I study <strong>AI and Machine Learning</strong> at Softwarica College with Coventry University.<br>
-          These days I spend most of my time figuring out how the algorithms actually work.
-        </p>
-
-        <div class="cta-row">
-          <a href="#projects" class="btn solid magnetic">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            View Projects
-          </a>
-          <a href="mailto:bishodip123@gmail.com" class="btn outline magnetic">Get In Touch</a>
-        </div>
-
-        <div class="socials">
-          <a href="https://github.com/bishowdip" target="_blank" rel="noopener" aria-label="GitHub" class="soc">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/bishowdip-thapa-50392833a/" target="_blank" rel="noopener" aria-label="LinkedIn" class="soc">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="mailto:bishodip123@gmail.com" aria-label="Email" class="soc">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-          </a>
-        </div>
+      <div class="site-menu" id="site-menu">
+        <a href="#work">Work</a>
+        <a href="#story">Story</a>
+        <a href="#toolbox">Toolbox</a>
+        <a class="nav-contact" href="#contact">Let's talk ↗</a>
       </div>
-
-      <!-- Right: Visual -->
-      <div class="hero-right">
-        <div class="pic-wrap" data-parallax>
-          <div class="ring r1" aria-hidden="true"></div>
-          <div class="ring r2" aria-hidden="true"></div>
-          <div class="ring r3" aria-hidden="true"></div>
-          <!-- Orbital particles -->
-          <div class="orbit orbit-1" aria-hidden="true"><span class="orb"></span></div>
-          <div class="orbit orbit-2" aria-hidden="true"><span class="orb"></span></div>
-          <div class="orbit orbit-3" aria-hidden="true"><span class="orb"></span></div>
-          <!-- Aura -->
-          <div class="pic-aura" aria-hidden="true"></div>
-          <img src="bishowdip.jpg" alt="Portrait of Bishowdip Thapa" class="pic" width="240" height="240" fetchpriority="high" decoding="async" />
-          <div class="pic-badge" aria-label="NVIDIA AI Certified">🎖️ NVIDIA<br>AI Certified</div>
-        </div>
-        <div class="float-card fc1">
-          <span class="fce">🧠</span>
-          <div>
-            <div class="fcl">Building</div>
-            <div class="fcv">Medical AI + XAI</div>
-          </div>
-        </div>
-        <div class="float-card fc2">
-          <span class="fce">📱</span>
-          <div>
-            <div class="fcl">Contributing</div>
-            <div class="fcv">GharBato App</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="mouse"><div class="wheel"></div></div>
-      <span>scroll</span>
-    </div>
-  </section>
+    </nav>
+  </header>
 
   <main id="main">
-
-  <!-- ══════════════════ ABOUT ══════════════════ -->
-  <section id="about" class="sec">
-    <div class="inner">
-      <div class="sec-head reveal" data-split-head>
-        <span class="sec-tag">01 // about_me</span>
-        <h2>Who Am I?</h2>
-      </div>
-      <div class="about-grid">
-
-        <div class="about-card reveal">
-          <div class="aib">
-
-            <div class="aib-item">
-              <div class="aib-icon">📍</div>
-              <div class="aib-body">
-                <span class="aib-label">Location</span>
-                <span class="aib-val">Kathmandu, Nepal 🇳🇵</span>
-              </div>
-            </div>
-
-            <div class="aib-item">
-              <div class="aib-icon">🎓</div>
-              <div class="aib-body">
-                <span class="aib-label">Education</span>
-                <span class="aib-val">BSc Software Engineering, focused on AI and ML</span>
-                <span class="aib-sub">Softwarica College with Coventry University, 2024 to 2027</span>
-              </div>
-            </div>
-
-            <div class="aib-item">
-              <div class="aib-icon">🎖️</div>
-              <div class="aib-body">
-                <span class="aib-label">Certification</span>
-                <span class="aib-val">NVIDIA Getting Started with AI on Jetson Nano</span>
-              </div>
-            </div>
-
-            <div class="aib-item">
-              <div class="aib-icon">📚</div>
-              <div class="aib-body">
-                <span class="aib-label">Currently Learning</span>
-                <span class="aib-val">ML algorithms, from regression to neural nets</span>
-                <span class="aib-val">How to explain models with SHAP and LIME</span>
-              </div>
-            </div>
-
-            <div class="aib-item">
-              <div class="aib-icon">🔨</div>
-              <div class="aib-body">
-                <span class="aib-label">Currently Building</span>
-                <span class="aib-val">A medical AI system that explains its predictions</span>
-                <span class="aib-val">GharBato, an Android app written in Kotlin</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="interest-tags">
-            <span>🧠 Machine Learning</span>
-            <span>🤖 Explainable AI</span>
-            <span>🔮 Deep Learning</span>
-            <span>⚡ Edge AI</span>
-            <span>🔬 Research</span>
-            <span>📱 Android Dev</span>
-          </div>
-        </div>
-
-        <div class="about-text reveal-r">
-          <p>
-            I'm studying <strong>AI and Machine Learning</strong> at Softwarica College with Coventry University.
-            Before this I spent a couple of years doing Mechatronics at Bauman Moscow State Technical University,
-            so I still like to think about software the way I'd think about a machine.
-          </p>
-          <p>
-            Lately most of my time goes into the <strong>algorithms</strong>. I'm working through regression,
-            tree models and neural networks, and trying to understand not just how a model makes a prediction
-            but why it made that one. That's what got me into <strong>explainable AI</strong> with tools like SHAP and LIME.
-          </p>
-          <p>
-            I'm putting all of that into a <strong>medical AI project</strong> I'm building right now. I also help
-            out on <strong>GharBato</strong>, a Kotlin Android app that my team has grown to more than 700 commits.
-          </p>
-
-          <div class="stats-row">
-            <div class="stat">
-              <span class="sn">5+</span>
-              <span class="sl">Projects</span>
-            </div>
-            <div class="stat">
-              <span class="sn">700+</span>
-              <span class="sl">Commits</span>
-            </div>
-            <div class="stat">
-              <span class="sn">3+</span>
-              <span class="sl">Languages</span>
-            </div>
-            <div class="stat">
-              <span class="sn">1</span>
-              <span class="sl">NVIDIA Cert</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ SKILLS ══════════════════ -->
-  <section id="skills" class="sec alt">
-    <div class="inner">
-      <div class="sec-head reveal" data-split-head>
-        <span class="sec-tag">02 // tech_stack</span>
-        <h2>Skills &amp; Tools</h2>
+    <section class="hero" id="top">
+      <canvas id="binary-field" aria-hidden="true"></canvas>
+      <div class="hero-kicker">
+        <span class="status-dot"></span>
+        Kathmandu, Nepal · Open to interesting work
       </div>
 
-      <div class="skill-groups">
-
-        <div class="sg reveal">
-          <h3 class="sg-h">AI / Machine Learning</h3>
-          <div class="chips">
-            <div class="chip">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" loading="lazy">
-              <span>Scikit-learn</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="Pandas" loading="lazy">
-              <span>Pandas</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/numpy/numpy-original.svg" alt="NumPy" loading="lazy">
-              <span>NumPy</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/streamlit/streamlit-original.svg" alt="Streamlit" loading="lazy">
-              <span>Streamlit</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jupyter/jupyter-original.svg" alt="Jupyter" loading="lazy">
-              <span>Jupyter</span>
-            </div>
-            <div class="chip tc"><span>XGBoost</span></div>
-            <div class="chip tc"><span>LightGBM</span></div>
-            <div class="chip tc"><span>Random Forest</span></div>
-            <div class="chip tc"><span>Neural Networks</span></div>
-            <div class="chip tc"><span>SHAP</span></div>
-            <div class="chip tc"><span>LIME</span></div>
-          </div>
-        </div>
-
-        <div class="sg reveal" style="--d:0.1s">
-          <h3 class="sg-h">Languages</h3>
-          <div class="chips">
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" loading="lazy">
-              <span>Python</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" loading="lazy">
-              <span>Java</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg" alt="Kotlin" loading="lazy">
-              <span>Kotlin</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="sg reveal" style="--d:0.2s">
-          <h3 class="sg-h">Mobile &amp; Desktop</h3>
-          <div class="chips">
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" alt="Android" loading="lazy">
-              <span>Android</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gradle/gradle-original.svg" alt="Gradle" loading="lazy">
-              <span>Gradle</span>
-            </div>
-            <div class="chip tc"><span>Tkinter</span></div>
-            <div class="chip tc"><span>Swing</span></div>
-          </div>
-        </div>
-
-        <div class="sg reveal" style="--d:0.3s">
-          <h3 class="sg-h">Tools &amp; Databases</h3>
-          <div class="chips">
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" alt="SQLite" loading="lazy">
-              <span>SQLite</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" loading="lazy">
-              <span>Git</span>
-            </div>
-            <div class="chip">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" alt="GitHub" loading="lazy">
-              <span>GitHub</span>
-            </div>
-            <div class="chip tc"><span>Jetson Nano</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ MARQUEE DIVIDER ══════════════════ -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="mq-item">✦ Available for opportunities</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Explainable AI</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Android with Kotlin</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Edge AI on Jetson</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">SHAP and LIME</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Kathmandu, Nepal 🇳🇵</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Let's build something</span>
-      <span class="mq-dot">●</span>
-      <!-- duplicate for seamless loop -->
-      <span class="mq-item">✦ Available for opportunities</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Explainable AI</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Android with Kotlin</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Edge AI on Jetson</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">SHAP and LIME</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Kathmandu, Nepal 🇳🇵</span>
-      <span class="mq-dot">●</span>
-      <span class="mq-item">Let's build something</span>
-      <span class="mq-dot">●</span>
-    </div>
-  </div>
-
-  <!-- ══════════════════ PROJECTS ══════════════════ -->
-  <section id="projects" class="sec">
-    <div class="inner">
-      <div class="sec-head reveal" data-split-head>
-        <span class="sec-tag">03 // featured_work</span>
-        <h2>Projects</h2>
+      <div class="hero-title" aria-label="I build useful things from zero and one">
+        <span class="line line-one">I build <em>useful</em></span>
+        <span class="line line-two">things from</span>
+        <span class="line line-three"><b>0</b> and <b>1</b><i>.</i></span>
       </div>
 
-      <div class="proj-grid">
-
-        <div class="proj-card featured reveal">
-          <div class="proj-top">
-            <span class="proj-ico">🧠</span>
-            <a href="https://github.com/bishowdip/medical-ai-prediction-system" target="_blank" rel="noopener" class="gh-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            </a>
-          </div>
-          <span class="featured-label">✦ Featured</span>
-          <h3><a href="https://github.com/bishowdip/medical-ai-prediction-system" target="_blank" rel="noopener" class="proj-title-link">Medical AI Prediction System</a></h3>
-          <p>This is my main project right now. It predicts the risk of several diseases and, just as importantly, shows why it made each call using <strong>SHAP and LIME</strong>. Built with ensemble models and a Streamlit dashboard.</p>
-          <div class="tags">
-            <span>Python</span><span>XGBoost</span><span>LightGBM</span><span>SHAP</span><span>LIME</span><span>Streamlit</span>
-          </div>
-        </div>
-
-        <div class="proj-card reveal" style="--d:0.1s">
-          <div class="proj-top">
-            <span class="proj-ico">📱</span>
-            <a href="https://github.com/ManjilDadaa/GharBato" target="_blank" rel="noopener" class="gh-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            </a>
-          </div>
-          <h3><a href="https://github.com/ManjilDadaa/GharBato" target="_blank" rel="noopener" class="proj-title-link">GharBato</a></h3>
-          <p>A home management Android app I build together with four other people. It has grown to more than 700 commits, so it really feels like a proper team product.</p>
-          <div class="tags"><span>Kotlin</span><span>Android</span><span>Gradle</span></div>
-        </div>
-
-        <div class="proj-card reveal" style="--d:0.2s">
-          <div class="proj-top">
-            <span class="proj-ico">🎯</span>
-            <a href="https://github.com/bishowdip/QuizApplication" target="_blank" rel="noopener" class="gh-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            </a>
-          </div>
-          <h3><a href="https://github.com/bishowdip/QuizApplication" target="_blank" rel="noopener" class="proj-title-link">Quiz Application</a></h3>
-          <p>A desktop quiz app I built in Java. It has logins, a leaderboard and automatic grading, all organised with the MVC pattern.</p>
-          <div class="tags"><span>Java</span><span>Swing</span><span>SQLite</span><span>MVC</span></div>
-        </div>
-
-        <div class="proj-card reveal" style="--d:0.3s">
-          <div class="proj-top">
-            <span class="proj-ico">💇</span>
-            <a href="https://github.com/bishowdip/Parlour_Management_System" target="_blank" rel="noopener" class="gh-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            </a>
-          </div>
-          <h3><a href="https://github.com/bishowdip/Parlour_Management_System" target="_blank" rel="noopener" class="proj-title-link">Parlour Management System</a></h3>
-          <p>A tool for running a salon, with appointment booking, billing and service tracking. I was the Scrum Master on this one.</p>
-          <div class="tags"><span>Python</span><span>Tkinter</span><span>SQLite</span></div>
-        </div>
-
-        <div class="proj-card reveal" style="--d:0.4s">
-          <div class="proj-top">
-            <span class="proj-ico">🐄</span>
-            <a href="https://github.com/bishowdip/GauManagementSystem" target="_blank" rel="noopener" class="gh-link" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            </a>
-          </div>
-          <h3><a href="https://github.com/bishowdip/GauManagementSystem" target="_blank" rel="noopener" class="proj-title-link">Gau Management System</a></h3>
-          <p>A system for keeping livestock records. I led the team on this project as Scrum Master.</p>
-          <div class="tags"><span>Java</span><span>SQLite</span><span>Scrum</span></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ EDUCATION ══════════════════ -->
-  <section id="education" class="sec alt">
-    <div class="inner">
-      <div class="sec-head reveal" data-split-head>
-        <span class="sec-tag">04 // background</span>
-        <h2>Education &amp; Journey</h2>
-      </div>
-
-      <div class="timeline">
-
-        <div class="tl-item reveal">
-          <div class="tl-dot active"></div>
-          <div class="tl-body">
-            <span class="tl-date">2024 to now</span>
-            <h3>BSc Software Engineering</h3>
-            <p class="tl-org">Softwarica College of IT and E-commerce, Coventry University, UK</p>
-            <p>I'm in my second year, mostly focused on AI, machine learning and a little mobile development. I picked up the NVIDIA AI certification along the way.</p>
-          </div>
-        </div>
-
-        <div class="tl-item reveal" style="--d:0.15s">
-          <div class="tl-dot"></div>
-          <div class="tl-body">
-            <span class="tl-date">2019 to 2023, four semesters</span>
-            <h3>Mechatronics, Robotics and Automation Engineering</h3>
-            <p class="tl-org">Bauman Moscow State Technical University, Russia</p>
-            <p>This is where I first got into robotics and embedded systems, and where I got hooked on the idea of machines that can think for themselves.</p>
-          </div>
-        </div>
-
-        <div class="tl-item reveal" style="--d:0.3s">
-          <div class="tl-dot cert"></div>
-          <div class="tl-body">
-            <span class="tl-date">Certification</span>
-            <h3>Getting Started with AI on Jetson Nano</h3>
-            <p class="tl-org">NVIDIA Deep Learning Institute</p>
-            <p>Learning to run AI and computer vision models directly on small GPU hardware.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════ CONTACT ══════════════════ -->
-  <section id="contact" class="sec">
-    <div class="inner">
-      <div class="sec-head reveal" data-split-head>
-        <span class="sec-tag">05 // reach_out</span>
-        <h2>Let's Connect</h2>
-      </div>
-
-      <div class="contact-box reveal">
-        <p class="contact-p">
-          Right now I'm looking for internships, research to get involved in, or any project that sounds interesting.<br>
-          Whether it's about AI, Android or just a fun idea, I'd really like to hear from you.
+      <div class="hero-bottom">
+        <p class="hero-intro">
+          I’m <strong>Bishowdip</strong>—a software engineering student exploring the space where
+          <span class="scribble">AI becomes understandable</span> and code becomes useful in the real world.
         </p>
-        <div class="contact-cta">
-          <a href="mailto:bishodip123@gmail.com" class="btn solid large magnetic">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-            bishodip123@gmail.com
+        <a class="round-link magnetic" href="#work" aria-label="See selected work">
+          <span>See work</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-stamp" aria-hidden="true">
+        <span>CURIOUS BY DEFAULT · BUILDING IN PUBLIC · </span>
+        <b>✦</b>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Areas of interest">
+      <div class="marquee-track">
+        <span>EXPLAINABLE AI</span><i>✦</i><span>ANDROID</span><i>✦</i><span>EDGE COMPUTING</span><i>✦</i><span>USEFUL SOFTWARE</span><i>✦</i>
+        <span>EXPLAINABLE AI</span><i>✦</i><span>ANDROID</span><i>✦</i><span>EDGE COMPUTING</span><i>✦</i><span>USEFUL SOFTWARE</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="work section-pad" id="work">
+      <div class="section-heading reveal">
+        <p><span>01</span> Selected work</p>
+        <h2>Things I cared<br>enough to <em>make.</em></h2>
+      </div>
+
+      <div class="project-list">
+        <article class="project project-featured reveal">
+          <a href="https://github.com/bishowdip/medical-ai-prediction-system" target="_blank" rel="noopener" aria-label="Medical AI Prediction System on GitHub">
+            <div class="project-visual visual-medical">
+              <div class="xai-map" aria-hidden="true">
+                <span style="--x:12%;--y:18%;--s:1.2">age</span>
+                <span style="--x:58%;--y:11%;--s:.8">glucose</span>
+                <span style="--x:75%;--y:53%;--s:1.5">BMI</span>
+                <span style="--x:18%;--y:69%;--s:.7">pressure</span>
+                <span style="--x:43%;--y:43%;--s:2">WHY?</span>
+                <div class="pulse-core"></div>
+              </div>
+              <span class="case-number">CASE / 001</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div class="project-copy">
+              <div>
+                <p class="eyebrow">AI · HEALTH · EXPLAINABILITY</p>
+                <h3>Medical AI<br>Prediction System</h3>
+              </div>
+              <p>Multi-disease risk prediction that doesn’t stop at an answer. SHAP and LIME help reveal why the model made each call.</p>
+              <ul><li>Python</li><li>XGBoost</li><li>Streamlit</li><li>SHAP + LIME</li></ul>
+            </div>
           </a>
-          <button type="button" id="copyEmail" class="btn outline large magnetic" aria-label="Copy email to clipboard" data-email="bishodip123@gmail.com">
-            <svg class="copy-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <svg class="check-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="copy-label">Copy</span>
-          </button>
+        </article>
+
+        <article class="project project-half reveal">
+          <a href="https://github.com/bishowdip/Handwritten-Form-OCR" target="_blank" rel="noopener" aria-label="Handwritten Form OCR on GitHub">
+            <div class="project-visual visual-ocr">
+              <div class="paper-form" aria-hidden="true">
+                <span>नाम / NAME</span><strong>Bishowdip</strong>
+                <span>DATA</span><strong>{ structured: true }</strong>
+              </div>
+              <span class="scan-line"></span>
+              <span class="case-number">CASE / 002</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div class="project-copy">
+              <div>
+                <p class="eyebrow">VISION · OCR · PUBLIC SYSTEMS</p>
+                <h3>Handwritten<br>Form OCR</h3>
+              </div>
+              <p>Turns handwritten government and college forms into clean JSON or CSV data.</p>
+              <ul><li>Python</li><li>Computer Vision</li><li>OCR</li></ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="project project-half reveal">
+          <a href="https://github.com/bishowdip/SatarkAI" target="_blank" rel="noopener" aria-label="SatarkAI on GitHub">
+            <div class="project-visual visual-satark">
+              <div class="forensic-eye" aria-hidden="true"><i></i><b>87%</b></div>
+              <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="case-number">CASE / 003</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div class="project-copy">
+              <div>
+                <p class="eyebrow">AI · MEDIA FORENSICS</p>
+                <h3>SatarkAI</h3>
+              </div>
+              <p>An AI-media forensic triage workstation for inspecting suspicious digital content.</p>
+              <ul><li>Python</li><li>Forensics</li><li>AI</li></ul>
+            </div>
+          </a>
+        </article>
+
+        <article class="project project-wide reveal">
+          <a href="https://github.com/ManjilDadaa/GharBato" target="_blank" rel="noopener" aria-label="GharBato on GitHub">
+            <div class="project-visual visual-ghar">
+              <div class="route" aria-hidden="true">
+                <span class="pin pin-a"></span><i></i><span class="pin pin-b"></span>
+              </div>
+              <div class="collab-note"><strong>5</strong> contributors<br><strong>700+</strong> commits</div>
+              <span class="case-number">CASE / 004</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <div class="project-copy">
+              <div>
+                <p class="eyebrow">ANDROID · TEAMWORK · KOTLIN</p>
+                <h3>GharBato</h3>
+              </div>
+              <p>A collaborative Android project and a real lesson in shipping software with a team—not just beside one.</p>
+              <ul><li>Kotlin</li><li>Android</li><li>Gradle</li><li>Collaboration</li></ul>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <a class="text-link reveal" href="https://github.com/bishowdip?tab=repositories" target="_blank" rel="noopener">
+        Explore all 15 repositories <span>↗</span>
+      </a>
+    </section>
+
+    <section class="story section-pad" id="story">
+      <div class="story-grid">
+        <div class="portrait-wrap reveal">
+          <div class="portrait-frame">
+            <img src="bishowdip.jpg" alt="Bishowdip Thapa in Kathmandu" width="309" height="387" loading="lazy">
+          </div>
+          <p class="portrait-caption">FIG. 01 — Human behind the commits</p>
+          <span class="portrait-sticker">still<br>learning!</span>
         </div>
-        <div class="contact-links">
-          <a href="https://github.com/bishowdip" target="_blank" rel="noopener" class="cl">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-            github.com/bishowdip
-          </a>
-          <a href="https://www.linkedin.com/in/bishowdip-thapa-50392833a/" target="_blank" rel="noopener" class="cl">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            Bishowdip Thapa
-          </a>
+
+        <div class="story-copy reveal">
+          <p class="section-label"><span>02</span> The plot so far</p>
+          <h2>I like software<br>with a pulse.</h2>
+          <p class="story-lead">My path started with machines before it became mostly code.</p>
+          <p>I explored mechatronics, robotics, and automation at Bauman Moscow State Technical University. That hardware-software intersection still shapes how I build: systems should make sense, have a purpose, and survive contact with reality.</p>
+          <p>Now I study Software Engineering at Softwarica College, affiliated with Coventry University. I’m especially drawn to explainable ML, edge AI, Android, and tools that solve ordinary, human problems.</p>
+          <blockquote>“Learning to make something out from 0 and 1.”</blockquote>
         </div>
       </div>
-    </div>
-  </section>
 
+      <div class="timeline reveal">
+        <div><span>2019—23</span><strong>Robotics roots</strong><p>Bauman Moscow State Technical University</p></div>
+        <i></i>
+        <div><span>2024—27</span><strong>Software engineering</strong><p>Softwarica College × Coventry University</p></div>
+        <i></i>
+        <div><span>NOW</span><strong>Building in the open</strong><p>AI, Android, edge experiments</p></div>
+      </div>
+    </section>
+
+    <section class="toolbox section-pad" id="toolbox">
+      <div class="section-heading reveal">
+        <p><span>03</span> Working set</p>
+        <h2>Tools change.<br><em>Curiosity stays.</em></h2>
+      </div>
+      <div class="tool-grid reveal">
+        <div class="tool-cell tool-intro">
+          <p>I’m not interested in collecting logos. These are simply the tools helping me ask better questions right now.</p>
+          <span class="tiny-note">Last updated / 2026</span>
+        </div>
+        <div class="tool-cell"><span>01</span><h3>Think</h3><p>Explainable AI<br>Machine Learning<br>System Design<br>MVC Architecture</p></div>
+        <div class="tool-cell cobalt"><span>02</span><h3>Build</h3><p>Python<br>Java<br>Kotlin<br>SQL</p></div>
+        <div class="tool-cell lime"><span>03</span><h3>Explore</h3><p>Edge AI<br>Computer Vision<br>Android<br>Human-centered AI</p></div>
+        <div class="tool-cell"><span>04</span><h3>Ship with</h3><p>Git + GitHub<br>Streamlit<br>SQLite<br>NVIDIA Jetson</p></div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="contact-orbit" aria-hidden="true"><span>LET'S MAKE SOMETHING USEFUL · SAY HELLO · </span></div>
+      <p class="section-label reveal"><span>04</span> Your move</p>
+      <h2 class="reveal">Have a problem<br>worth <em>thinking about?</em></h2>
+      <p class="contact-note reveal">I’m open to internships, collaborations, research, and conversations that begin with “what if?”</p>
+      <a class="email-link reveal" href="mailto:bishodip123@gmail.com">
+        <span>bishodip123@gmail.com</span><i>↗</i>
+      </a>
+      <div class="contact-links reveal">
+        <a href="https://github.com/bishowdip" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/bishowdipthapa/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://orcid.org/0009-0003-5452-7668" target="_blank" rel="noopener">ORCID ↗</a>
+      </div>
+    </section>
   </main>
 
-  <!-- ── Footer ── -->
   <footer>
-    <div class="inner">
-      <div class="footer-inner">
-        <span class="logo"><span class="dim">&lt;</span>BT<span class="dim">/&gt;</span></span>
-        <p class="fq">"I'll build something out of 0s and 1s, that's for sure."&nbsp;🇳🇵</p>
-        <p class="fc-copy">© <span id="year">2026</span> Bishowdip Thapa &nbsp;·&nbsp; Made in Kathmandu, Nepal &nbsp;·&nbsp; <a href="#hero" class="footer-link">Back to top ↑</a></p>
-      </div>
-    </div>
+    <p>Designed &amp; built by Bishowdip Thapa</p>
+    <p>© <span id="year">2026</span> · Kathmandu <span class="footer-time" aria-label="Current time in Kathmandu"></span></p>
+    <a href="#top">Back to zero ↑</a>
   </footer>
-
-  <!-- Back-to-top button -->
-  <button id="toTop" class="to-top" aria-label="Scroll to top" type="button">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="18" height="18" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-
-  <!-- Toast -->
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js" defer></script>
 </body>
